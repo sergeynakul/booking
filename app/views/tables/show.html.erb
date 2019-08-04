@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @table.restaurant.title %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @table.number %>
+</p>
+
+<%= render 'reservations/index' %>
+<%= render 'reservations/new' %>
+
+<%= link_to 'Edit', edit_table_path(@table) %> |
+<%= link_to 'Back', restaurant_path(@table.restaurant) %>

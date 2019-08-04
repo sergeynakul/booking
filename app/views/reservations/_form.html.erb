@@ -1,0 +1,32 @@
+<%= form_with(model: [@table, @reservation], local: true) do |form| %>
+  <% if reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+      <% reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :start %>
+    <%= form.datetime_select :start, default: Time.now %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.select :duration, [30, 60, 90, 120, 150, 180, 210, 240, 270, 300] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user %>
+    <%= form.text_field :user %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

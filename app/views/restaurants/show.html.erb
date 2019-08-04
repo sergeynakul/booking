@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @restaurant.title %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @restaurant.start_time.strftime("%H:%M") %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @restaurant.end_time.strftime("%H:%M") %>
+</p>
+
+<%= render 'tables/index' %>
+<%= render 'tables/new' %>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>

@@ -1,0 +1,10 @@
+<h2>Tables</h2>
+
+<% @restaurant.tables.each do |table| %>
+  <p><%= table.number %> |
+     <%= link_to 'Show', table %> |
+     <%= link_to 'Edit', edit_table_path(table) %> |
+     <%= link_to 'Destroy', table, method: :delete, data: { confirm: 'Are you sure?' } %>
+   </p>
+<% end %>
+
